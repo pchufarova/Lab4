@@ -4,7 +4,7 @@ import creatures.Human;
 import enums.Genders;
 import enums.Reactions;
 
-public class Duchess extends Human {
+public class Duchess extends Creatures {
 
     public Duchess(String name) {
 
@@ -14,22 +14,22 @@ public class Duchess extends Human {
 
     }
 
-    @Override
-    public void react(boolean isBumped) {
-
-        if (isBumped) {
-
-            super.condition = Reactions.IGNORE;
-
-        } else {
-
-            super.condition = Reactions.CALM;
-
-        }
-
-        System.out.println("Состояние " + name + ": "+ condition.getCondition());
-
-
-    }
+//    @Override
+//    public void react(boolean isBumped) {
+//
+//        if (isBumped) {
+//
+//            super.condition = Reactions.IGNORE;
+//
+//        } else {
+//
+//            super.condition = Reactions.CALM;
+//
+//        }
+//
+//        System.out.println("Состояние " + name + ": "+ condition.getCondition());
+//
+//
+//    }
 
 }

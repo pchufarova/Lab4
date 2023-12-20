@@ -1,6 +1,6 @@
 package creatures;
 
-import enums.Positions;
+import things.Letter;
 import things.Wig;
 
 public class Frog extends Servant {
@@ -10,7 +10,13 @@ public class Frog extends Servant {
         name = "Головастик";
         post = "Швейцар";
         Wig wig = new Wig();
-        Positions position = Positions.STRAIGHT;
+
+    }
+
+    public void takeLetter(Letter letter) {
+
+        System.out.println(post + " " + name + " берет письмо.");
+        speak(letter.getFromWho() + " " + letter.getToWho() + " " + letter.getTheme());
 
     }
 

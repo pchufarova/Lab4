@@ -6,7 +6,8 @@ public enum Reactions {
     CRY("вопит"),
     FEAR("вне себя от ужаса"),
     CALM("спокойствие"),
-    CURIOUS("интересно");
+    CURIOUS("интересно"),
+    LAUGHING("смеётся");
 
     private String condition;
     Reactions(String condition) { this.condition = condition; }

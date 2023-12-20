@@ -1,7 +1,9 @@
 package interfaces;
 
+import enums.Places;
+
 public interface Goable {
 
-    void go();
+    void goTo(Places place);
 
 }

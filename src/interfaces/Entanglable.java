@@ -5,6 +5,6 @@ import things.Wig;
 
 public interface Entanglable {
 
-    Events entangle();
+    Events entangle(Wig wig);
 
 }

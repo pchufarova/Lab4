@@ -1,7 +1,6 @@
 package creatures;
 
-import enums.Positions;
-import interfaces.Bowable;
+import things.Letter;
 import things.Wig;
 
 public class Crucian extends Servant {
@@ -12,15 +11,14 @@ public class Crucian extends Servant {
         name = "Карась";
         post = "Лакей";
         wig = new Wig();
-        position = Positions.STRAIGHT;
 
     }
 
+    public void giveLetter(Letter letter, Frog frog) {
 
-
-    public class UnderArm {
-
-
+        System.out.println(post + " " + name + " дает письмо " + frog.post + " " + frog.name);
+        speak(letter.getToWho() + " " + letter.getFromWho() + " " + letter.getTheme());
+        frog.takeLetter(letter);
 
     }
 

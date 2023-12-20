@@ -1,9 +1,10 @@
 package interfaces;
 
-import creatures.Animal;
+import creatures.Creatures;
+import creatures.Servant;
 
 public interface Bowable {
 
-    void bowTo();
+    void bowTo(Servant servant);
 
 }

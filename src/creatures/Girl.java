@@ -1,43 +1,61 @@
 package creatures;
 
-import creatures.Human;
+import enums.Events;
 import enums.Genders;
+import enums.Places;
 import enums.Reactions;
-import interfaces.Goable;
-import interfaces.Hideable;
-import interfaces.Seeable;
+import interfaces.Laughable;
 
-public class Girl extends Human implements Goable, Hideable, Seeable {
+public class Girl extends Creatures implements Laughable {
 
     public Girl(String name) {
 
         super();
         super.name = name;
         super.gender = Genders.FEMALE;
+        super.currentPlace = Places.FOREST;
 
     }
 
     @Override
-    public void go() {}
-    @Override
-    public void hide() {}
-    @Override
-    public void see() {}
+    public void laugh() {
 
+        condition = Reactions.LAUGHING;
+        System.out.println(name + " " + condition.getCondition());
 
-    @Override
-    public void react(boolean isBumped) {
+    }
+    public void catchEvent(Events event) {
 
-        if (isBumped) {
-            super.condition = Reactions.FEAR;
-        } else {
+        switch (event) {
 
-            super.condition = Reactions.CALM;
-
+            case TANGLED_WIGS: { laugh();
+                super.goTo(Places.FOREST);
+                break;
+            }
+            case SERVANTS_IN_WIGS: { condition = Reactions.CURIOUS;
+                System.out.println(name + " видит слуг в париках");
+                System.out.println("Состояние " + name + ": " + condition.getCondition());
+                goTo(Places.BUSH);
+                break;
+            }
         }
 
-        System.out.println("Состояние " + name + ": " + condition.getCondition());
-
     }
+
+
+//    @Override
+//    public void react(boolean isBumped) {
+//
+//        if (isBumped) {
+//            super.condition = Reactions.FEAR;
+//        } else {
+//
+//            super.condition = Reactions.CALM;
+//
+//        }
+//
+//        System.out.println("Состояние " + name + ": " + condition.getCondition());
+//
+//    }
 
 }
