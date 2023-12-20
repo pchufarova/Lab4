@@ -1,3 +1,8 @@
+package creatures;
+
+import enums.Genders;
+import enums.Reactions;
+
 import java.util.Objects;
 
 public abstract class Human {

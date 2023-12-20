@@ -1,3 +1,5 @@
+package things;
+
 import java.util.Objects;
 
 public class GrillThings extends Things {
@@ -7,13 +9,13 @@ public class GrillThings extends Things {
 
         super();
         this.name = name;
-        coefficient = 20;
+        Things.coefficient = 20;
 
     }
 
     @Override
     protected boolean is_thing_bumped() {
 
-        return (coefficient * Math.random() + name.length() > LIMIT);
+        return (Things.coefficient * Math.random() + name.length() > Things.LIMIT);
     }
 }

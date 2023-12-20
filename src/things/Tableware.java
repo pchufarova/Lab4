@@ -1,3 +1,5 @@
+package things;
+
 import java.util.Objects;
 
 public class Tableware extends Things { ;
@@ -6,12 +8,12 @@ public class Tableware extends Things { ;
 
         super();
         this.name = name;
-        coefficient = 10;
+        Things.coefficient = 10;
     }
 
     @Override
     protected boolean is_thing_bumped() {
 
-        return ((name.length() + coefficient) * Math.random() > LIMIT);
+        return ((name.length() + Things.coefficient) * Math.random() > Things.LIMIT);
     }
 }

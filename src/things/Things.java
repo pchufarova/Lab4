@@ -1,3 +1,9 @@
+package things;
+
+import creatures.Human;
+import interfaces.Bumpable;
+import interfaces.Flyable;
+
 import java.util.Objects;
 
 public abstract class Things implements Flyable, Bumpable {

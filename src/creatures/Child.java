@@ -1,4 +1,8 @@
-import java.util.Objects;
+package creatures;
+
+import creatures.Human;
+import enums.Genders;
+import enums.Reactions;
 
 public class Child extends Human {
 
