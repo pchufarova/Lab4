@@ -4,16 +4,18 @@ import enums.Events;
 import enums.Genders;
 import enums.Places;
 import enums.Reactions;
+import interfaces.CanCatchEvent;
 import interfaces.Laughable;
+import surroundings.Home;
 
-public class Girl extends Creatures implements Laughable {
+public class Girl extends Creatures implements Laughable, CanCatchEvent {
 
     public Girl(String name) {
 
         super();
         super.name = name;
         super.gender = Genders.FEMALE;
-        super.currentPlace = Places.FOREST;
+        super.currentPlace = Places.FOREST.getName();
 
     }
 
@@ -24,6 +26,15 @@ public class Girl extends Creatures implements Laughable {
         System.out.println(name + " " + condition.getCondition());
 
     }
+
+    public Events knockTheDoor(Home.Door door) {
+
+        System.out.println(name + " стучит в дверь.");
+        return door.knocked();
+
+    }
+
+    @Override
     public void catchEvent(Events event) {
 
         switch (event) {
@@ -37,6 +48,11 @@ public class Girl extends Creatures implements Laughable {
                 System.out.println("Состояние " + name + ": " + condition.getCondition());
                 goTo(Places.BUSH);
                 break;
+            } case CRUCIAN_GOES_AWAY: { condition = Reactions.CALM;
+                System.out.println(name + " насмеялась. Состояние:" + condition.getCondition());
+                goTo(Places.BUSH);
+                System.out.println("Карася уже не было.");
+
             }
         }
 
