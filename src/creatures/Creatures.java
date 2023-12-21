@@ -21,6 +21,13 @@ public abstract class Creatures implements Speakable, Goable {
 
     }
     @Override
+    public void ask(String question, Creatures askWho) {
+
+        System.out.println(name + " спрашивает " + askWho.name + ": " + question);
+
+    }
+
+    @Override
     public void goTo(Places place) {
 
         System.out.println(name + " уходит в место: " + place.getName());

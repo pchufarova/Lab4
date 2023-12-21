@@ -47,6 +47,13 @@ public class Main {
 
         girl.catchEvent(Events.CRUCIAN_GOES_AWAY);
         frog.catchEvent(girl.knockTheDoor(door));
+        // НАБРОСКИ
+        // алиса спрашивает головастика - ему пох
+        // алиса спросит ОЧЕНЬ ГРОМКО - ответит
+        //
+        girl.ask("Извините, а как же мне тогда попасть в дом?", frog);
+        girl.ask("Как же мне попасть в дом?", frog);
+        girl.ask("КАК МНЕ ПОПАСТЬ В ДОМ?", frog);
 
 
 

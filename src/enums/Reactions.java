@@ -2,12 +2,13 @@ package enums;
 
 public enum Reactions {
 
-    IGNORE("не замечает"),
+    IGNORE("не обращает внимания"),
     CRY("вопит"),
     FEAR("вне себя от ужаса"),
     CALM("спокойствие"),
     CURIOUS("интересно"),
-    LAUGHING("смеётся");
+    LAUGHING("смеётся"),
+    ANNOYED("раздражение");
 
     private String condition;
     Reactions(String condition) { this.condition = condition; }

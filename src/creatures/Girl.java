@@ -10,6 +10,8 @@ import surroundings.Home;
 
 public class Girl extends Creatures implements Laughable, CanCatchEvent {
 
+    private int voiceVolume = 5;
+
     public Girl(String name) {
 
         super();
@@ -33,6 +35,35 @@ public class Girl extends Creatures implements Laughable, CanCatchEvent {
         return door.knocked();
 
     }
+    public void ask(String question, Frog askWho) {
+
+        super.ask(question, askWho);
+        if (voiceVolume < 15) {
+
+            askWho.condition = Reactions.IGNORE;
+            System.out.println("Состояние " + askWho.name + ": " + askWho.condition.getCondition());
+            voiceVolume += 5;
+        } else {
+
+            askWho.speak("А кто сказал, что вы вообще должны попасть в дом, барышня?");
+            condition = Reactions.ANNOYED;
+            System.out.println("Состояние " + name + ": " + condition.getCondition());
+            voiceVolume = 5;
+
+
+        }
+
+
+    }
+
+    public void ask(String question, Duchess askWho) {
+
+        super.ask(question, askWho);
+
+
+    }
+
+
 
     @Override
     public void catchEvent(Events event) {
