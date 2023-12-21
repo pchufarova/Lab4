@@ -8,12 +8,12 @@ public class Tableware extends Things { ;
 
         super();
         this.name = name;
-        Things.coefficient = 10;
+        coefficient = 10;
     }
 
     @Override
     protected boolean is_thing_bumped() {
 
-        return ((name.length() + Things.coefficient) * Math.random() > Things.LIMIT);
+        return ((name.length() + coefficient) * Math.random() > Things.LIMIT);
     }
 }

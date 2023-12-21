@@ -1,50 +1,39 @@
 package things;
 
-import creatures.Human;
-import interfaces.Bumpable;
+import creatures.Creatures;
 import interfaces.Flyable;
 
 import java.util.Objects;
 
-public abstract class Things implements Flyable, Bumpable {
+public abstract class Things implements Flyable {
 
     protected String name;
     protected static final int LIMIT = 12;
-    protected static int coefficient;
+    protected int coefficient;
 
     protected abstract boolean is_thing_bumped();
 
-    public String getName() {
-
-        return name;
-    }
+    public String getName() { return name; }
+    public void setCoefficient(int coefficient) { this.coefficient = coefficient; }
 
     @Override
-    public void flyInto(Human... humans) {
+    public void flyInto(Creatures... creatures) {
 
-        for (Human human: humans) {
+        for (Creatures creature: creatures) {
 
-            System.out.println(name + " летит в " + human.getName());
+            System.out.println(name + " летит в " + creature.getName());
 
             if (is_thing_bumped()) {
 
-                bump(human);
+                System.out.println(name + " врезается в " + creature.getName());
+                creature.bumped();
 
             } else {
 
-                System.out.println(name + " не попадает в " + human.getName());
-                human.react(false);
+                System.out.println(name + " не попадает в " + creature.getName());
 
             }
         }
-    }
-
-    @Override
-    public void bump(Human human) {
-
-        System.out.println(name + " врезается в " + human.getName());
-        human.react(true);
-
     }
 
     @Override

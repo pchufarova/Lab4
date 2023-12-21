@@ -7,6 +7,7 @@ public enum Events {
     SERVANTS_IN_WIGS,
     TANGLED_WIGS,
     CRUCIAN_GOES_AWAY,
-    DOOR_IS_KNOCKED;
+    DOOR_IS_KNOCKED,
+    BUMP_EVENT;
 
 }

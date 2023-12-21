@@ -9,13 +9,13 @@ public class GrillThings extends Things {
 
         super();
         this.name = name;
-        Things.coefficient = 20;
+        coefficient = 20;
 
     }
 
     @Override
     protected boolean is_thing_bumped() {
 
-        return (Things.coefficient * Math.random() + name.length() > Things.LIMIT);
+        return (coefficient * Math.random() + name.length() > Things.LIMIT);
     }
 }

@@ -46,6 +46,7 @@ public class Girl extends Creatures implements Laughable, CanCatchEvent {
         } else {
 
             askWho.speak("А кто сказал, что вы вообще должны попасть в дом, барышня?");
+            askWho.condition = Reactions.CALM;
             condition = Reactions.ANNOYED;
             System.out.println("Состояние " + name + ": " + condition.getCondition());
             voiceVolume = 5;
@@ -86,23 +87,5 @@ public class Girl extends Creatures implements Laughable, CanCatchEvent {
 
             }
         }
-
     }
-
-
-//    @Override
-//    public void react(boolean isBumped) {
-//
-//        if (isBumped) {
-//            super.condition = Reactions.FEAR;
-//        } else {
-//
-//            super.condition = Reactions.CALM;
-//
-//        }
-//
-//        System.out.println("Состояние " + name + ": " + condition.getCondition());
-//
-//    }
-
 }

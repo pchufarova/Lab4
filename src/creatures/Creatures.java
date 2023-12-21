@@ -1,5 +1,6 @@
 package creatures;
 
+import enums.Events;
 import enums.Genders;
 import enums.Places;
 import enums.Reactions;
@@ -42,5 +43,13 @@ public abstract class Creatures implements Speakable, Goable {
         currentPlace = home.getName();
 
     }
+
+    public Events bumped() {
+
+        return Events.BUMP_EVENT;
+
+    }
+
+    public String getName() { return name; }
 
 }

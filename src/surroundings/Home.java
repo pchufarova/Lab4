@@ -32,7 +32,6 @@ public class Home {
 
             System.out.println("Никто не открывает.");
             return Events.DOOR_IS_KNOCKED;
-
         }
 
     }

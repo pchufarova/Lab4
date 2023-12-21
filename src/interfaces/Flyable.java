@@ -1,9 +1,10 @@
 package interfaces;
 
+import creatures.Creatures;
 import creatures.Human;
 
 public interface Flyable {
 
-    void flyInto(Human... humans);
+    void flyInto(Creatures... creatures);
 
 }

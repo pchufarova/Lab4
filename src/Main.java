@@ -1,10 +1,10 @@
 import creatures.*;
 import enums.Events;
 import enums.Genders;
-import enums.Places;
 import exceptions.HomeIsFullException;
 import surroundings.Home;
 import things.Letter;
+import things.Tableware;
 
 public class Main {
 
@@ -19,6 +19,8 @@ public class Main {
         CheshireCat cat = new CheshireCat();
         Home home = new Home();
         Home.Door door = home.new Door();
+        Tableware dish = new Tableware("Блюдо");
+        dish.setCoefficient(100);
 
         try {
             home.addToHome(duchess);
@@ -53,9 +55,8 @@ public class Main {
         //
         girl.ask("Извините, а как же мне тогда попасть в дом?", frog);
         girl.ask("Как же мне попасть в дом?", frog);
+        dish.flyInto(frog);
         girl.ask("КАК МНЕ ПОПАСТЬ В ДОМ?", frog);
-
-
 
     }
 
