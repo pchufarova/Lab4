@@ -1,6 +1,7 @@
 import creatures.*;
 import enums.Events;
 import enums.Genders;
+import exceptions.DeterminationException;
 import exceptions.HomeIsFullException;
 import surroundings.Home;
 import things.Letter;
@@ -18,7 +19,6 @@ public class Main {
         Cook cook = new Cook();
         CheshireCat cat = new CheshireCat();
         Home home = new Home();
-        Home.Door door = home.new Door();
         Tableware dish = new Tableware("Блюдо");
         dish.setCoefficient(100);
 
@@ -48,7 +48,7 @@ public class Main {
         }
 
         girl.catchEvent(Events.CRUCIAN_GOES_AWAY);
-        frog.catchEvent(girl.knockTheDoor(door));
+        frog.catchEvent(girl.knockTheDoor(home.door));
         // НАБРОСКИ
         // алиса спрашивает головастика - ему пох
         // алиса спросит ОЧЕНЬ ГРОМКО - ответит
@@ -57,6 +57,12 @@ public class Main {
         girl.ask("Как же мне попасть в дом?", frog);
         dish.flyInto(frog);
         girl.ask("КАК МНЕ ПОПАСТЬ В ДОМ?", frog);
+        try {
+            home.door.openBy(girl);
+        } catch (DeterminationException ex) {
+
+            System.out.println(ex.getMessage());
+        }
 
     }
 

@@ -8,7 +8,8 @@ public enum Reactions {
     CALM("спокойствие"),
     CURIOUS("интересно"),
     LAUGHING("смеётся"),
-    ANNOYED("раздражение");
+    ANNOYED("раздражение"),
+    DETERMINATION("решительность");
 
     private String condition;
     Reactions(String condition) { this.condition = condition; }

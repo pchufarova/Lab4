@@ -7,5 +7,6 @@ public interface Goable {
 
     void goTo(Places place);
     void goTo(Home home);
+    void goTo(Home.Kitchen kitchen);
 
 }

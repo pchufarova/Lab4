@@ -35,6 +35,7 @@ public class Girl extends Creatures implements Laughable, CanCatchEvent {
         return door.knocked();
 
     }
+
     public void ask(String question, Frog askWho) {
 
         super.ask(question, askWho);
@@ -50,21 +51,16 @@ public class Girl extends Creatures implements Laughable, CanCatchEvent {
             condition = Reactions.ANNOYED;
             System.out.println("Состояние " + name + ": " + condition.getCondition());
             voiceVolume = 5;
-
+            condition = Reactions.DETERMINATION;
 
         }
-
-
     }
-
     public void ask(String question, Duchess askWho) {
 
         super.ask(question, askWho);
 
 
     }
-
-
 
     @Override
     public void catchEvent(Events event) {

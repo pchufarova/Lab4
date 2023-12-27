@@ -43,6 +43,13 @@ public abstract class Creatures implements Speakable, Goable {
         currentPlace = home.getName();
 
     }
+    @Override
+    public void goTo(Home.Kitchen kitchen) {
+
+        System.out.println(name + " уходит в место: " + kitchen.getKitchenName());
+        currentPlace = kitchen.getKitchenName();
+
+    }
 
     public Events bumped() {
 
@@ -51,5 +58,6 @@ public abstract class Creatures implements Speakable, Goable {
     }
 
     public String getName() { return name; }
+    public Reactions getCondition() { return condition; }
 
 }
