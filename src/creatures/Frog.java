@@ -2,17 +2,16 @@ package creatures;
 
 import enums.Events;
 import enums.Reactions;
+import interfaces.Bumpable;
 import interfaces.CanCatchEvent;
 import things.Letter;
-import things.Wig;
 
-public class Frog extends Servant implements CanCatchEvent {
+public class Frog extends Servant implements CanCatchEvent, Bumpable {
 
     public Frog() {
 
         name = "Головастик";
         post = "Швейцар";
-        Wig wig = new Wig();
     }
 
     public void takeLetter(Letter letter) {
@@ -29,12 +28,12 @@ public class Frog extends Servant implements CanCatchEvent {
         }
     }
 
-    public Events bumped() {
+    @Override
+    public void bumped() {
 
         condition = Reactions.IGNORE;
         System.out.println("Состояние " + name + ": " + condition.getCondition());
         speak("Возможно, я просижу здесь до завтра... или до послезавтра.");
-        return Events.BUMP_EVENT;
 
     }
 }

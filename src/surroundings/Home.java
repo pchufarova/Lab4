@@ -4,31 +4,31 @@ import creatures.Creatures;
 import enums.Events;
 import enums.Reactions;
 import exceptions.DeterminationException;
-import exceptions.HomeIsFullException;
 
-public class Home {
+public class Home extends Place {
+    private Kitchen kitchen;
+    private Door door;
 
-    private static String name = "Дом";
-    private final int MAX_CREATURES = 5;
-    private Creatures[] creaturesInHome = new Creatures[MAX_CREATURES];
-    private int amountOfCreatures = 0;
-    public Kitchen kitchen = new Kitchen();
-    public Door door = new Door();
-    public void addToHome(Creatures creature) throws HomeIsFullException {
-        if (amountOfCreatures == MAX_CREATURES) throw new HomeIsFullException("Дом переполнен!");
+    public Home() {
 
-        creaturesInHome[amountOfCreatures] = creature;
-        amountOfCreatures += 1;
+        super("Дом");
+        this.kitchen = new Kitchen();
+        this.door = this.new Door();
 
     }
 
-    public String getName() { return name; }
 
-    public class Kitchen {
+    public Kitchen getKitchen() { return kitchen; }
+    public Door getDoor() { return door; }
 
-        private String kitchenName = "Кухня";
+    public static class Kitchen extends Place{
 
-        public String getKitchenName() { return kitchenName; }
+        public Kitchen() {
+
+            super("Кухня");
+
+        }
+
 
     }
 
@@ -52,8 +52,7 @@ public class Home {
             isClosed = false;
             System.out.println(creature.getName() + " решительно открывает дверь");
             creature.goTo(kitchen);
+
         }
-
-
     }
 }

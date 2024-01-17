@@ -1,7 +1,6 @@
 package interfaces;
 
 import creatures.Creatures;
-import creatures.Human;
 
 public interface Flyable {
 

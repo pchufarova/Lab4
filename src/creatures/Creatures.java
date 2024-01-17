@@ -2,18 +2,18 @@ package creatures;
 
 import enums.Events;
 import enums.Genders;
-import enums.Places;
 import enums.Reactions;
 import interfaces.Goable;
 import interfaces.Speakable;
 import surroundings.Home;
+import surroundings.Place;
 
 public abstract class Creatures implements Speakable, Goable {
 
     protected String name;
     protected Genders gender;
     protected Reactions condition;
-    protected String currentPlace;
+    protected Place currentPlace;
 
     @Override
     public void speak(String speach) {
@@ -29,31 +29,14 @@ public abstract class Creatures implements Speakable, Goable {
     }
 
     @Override
-    public void goTo(Places place) {
+    public void goTo(Place place) {
 
         System.out.println(name + " уходит в место: " + place.getName());
-        currentPlace = place.getName();
+        currentPlace = place;
 
     }
 
-    @Override
-    public void goTo(Home home) {
-
-        System.out.println(name + " уходит в место: " + home.getName());
-        currentPlace = home.getName();
-
-    }
-    @Override
-    public void goTo(Home.Kitchen kitchen) {
-
-        System.out.println(name + " уходит в место: " + kitchen.getKitchenName());
-        currentPlace = kitchen.getKitchenName();
-
-    }
-
-    public Events bumped() {
-
-        return Events.BUMP_EVENT;
+    public void bumped() {
 
     }
 

@@ -2,22 +2,24 @@ package creatures;
 
 import enums.Events;
 import enums.Genders;
-import enums.Places;
 import enums.Reactions;
 import interfaces.CanCatchEvent;
 import interfaces.Laughable;
 import surroundings.Home;
+import surroundings.Place;
 
 public class Girl extends Creatures implements Laughable, CanCatchEvent {
 
     private int voiceVolume = 5;
+    private Place startPlace;
 
-    public Girl(String name) {
+    public Girl(String name, Place startPlace) {
 
         super();
         super.name = name;
         super.gender = Genders.FEMALE;
-        super.currentPlace = Places.FOREST.getName();
+        this.startPlace = startPlace;
+        currentPlace = startPlace;
 
     }
 
@@ -58,6 +60,7 @@ public class Girl extends Creatures implements Laughable, CanCatchEvent {
     public void ask(String question, Duchess askWho) {
 
         super.ask(question, askWho);
+        askWho.speak("Это чеширский кот, вот почему.");
 
 
     }
@@ -68,20 +71,26 @@ public class Girl extends Creatures implements Laughable, CanCatchEvent {
         switch (event) {
 
             case TANGLED_WIGS: { laugh();
-                super.goTo(Places.FOREST);
+                super.goTo(startPlace);
                 break;
             }
             case SERVANTS_IN_WIGS: { condition = Reactions.CURIOUS;
                 System.out.println(name + " видит слуг в париках");
                 System.out.println("Состояние " + name + ": " + condition.getCondition());
-                goTo(Places.BUSH);
+                goTo(event.getBush());
                 break;
-            } case CRUCIAN_GOES_AWAY: { condition = Reactions.CALM;
+            }
+            case CRUCIAN_GOES_AWAY: { condition = Reactions.CALM;
                 System.out.println(name + " насмеялась. Состояние:" + condition.getCondition());
-                goTo(Places.BUSH);
+                goTo(event.getBush());
                 System.out.println("Карася уже не было.");
 
             }
         }
+    }
+
+    public void saw(CheshireCat cat) {
+
+
     }
 }

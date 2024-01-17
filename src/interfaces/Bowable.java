@@ -2,9 +2,10 @@ package interfaces;
 
 import creatures.Creatures;
 import creatures.Servant;
+import enums.Events;
 
 public interface Bowable {
 
-    void bowTo(Servant servant);
+    Events bowTo(Servant servant);
 
 }

@@ -1,6 +1,8 @@
 package things;
 
 import creatures.Creatures;
+import exceptions.DeterminationException;
+import exceptions.NegativeCoefficientException;
 import interfaces.Flyable;
 
 import java.util.Objects;
@@ -14,7 +16,13 @@ public abstract class Things implements Flyable {
     protected abstract boolean is_thing_bumped();
 
     public String getName() { return name; }
-    public void setCoefficient(int coefficient) { this.coefficient = coefficient; }
+    public void setCoefficient(int coefficient) {
+        if (coefficient <= 0) {
+            throw new NegativeCoefficientException();
+        } else {
+            this.coefficient = coefficient;
+        }
+    }
 
     @Override
     public void flyInto(Creatures... creatures) {

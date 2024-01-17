@@ -1,12 +1,12 @@
 package interfaces;
 
-import enums.Places;
 import surroundings.Home;
+import surroundings.Place;
 
 public interface Goable {
 
-    void goTo(Places place);
-    void goTo(Home home);
-    void goTo(Home.Kitchen kitchen);
+    void goTo(Place place);
+//    void goTo(Home home);
+//    void goTo(Home.Kitchen kitchen);
 
 }

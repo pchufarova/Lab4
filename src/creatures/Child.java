@@ -1,10 +1,11 @@
 package creatures;
 
-import creatures.Human;
+import enums.Events;
 import enums.Genders;
 import enums.Reactions;
+import interfaces.Bumpable;
 
-public class Child extends Creatures {
+public class Child extends Creatures implements Bumpable {
 
     public Child(String name, Genders gender) {
 
@@ -14,12 +15,11 @@ public class Child extends Creatures {
 
     }
 
-//    @Override
-//    public void react(boolean isBumped) {
-//
-//        super.condition = Reactions.CRY;
-//        System.out.println("Состояние " + name + ": " + condition.getCondition());
-//
-//    }
+    @Override
+    public void bumped() {
+
+        super.condition = Reactions.CRY;
+        System.out.println("Состояние " + name + ": " + condition.getCondition());
+    }
 
 }

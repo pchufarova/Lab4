@@ -1,7 +1,6 @@
 package creatures;
 
 import things.Letter;
-import things.Wig;
 
 public class Crucian extends Servant {
 
@@ -9,7 +8,6 @@ public class Crucian extends Servant {
 
         name = "Карась";
         post = "Лакей";
-        wig = new Wig();
     }
 
     public void giveLetter(Letter letter, Frog frog) {
