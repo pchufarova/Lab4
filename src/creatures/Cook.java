@@ -1,6 +1,5 @@
 package creatures;
 
-import enums.Events;
 import enums.Genders;
 import surroundings.Place;
 import things.Things;

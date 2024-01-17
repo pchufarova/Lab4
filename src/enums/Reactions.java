@@ -9,10 +9,7 @@ public enum Reactions {
     CURIOUS("интересно"),
     LAUGHING("смеётся"),
     ANNOYED("раздражение"),
-    DETERMINATION("решительность"),
-    SMILING("улыбается"),
-    JOY("восторг"),
-    SNEEZE("чихает");
+    DETERMINATION("решительность");
 
 
     private String condition;

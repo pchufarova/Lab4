@@ -1,7 +1,5 @@
 package things;
 
-import java.util.Objects;
-
 public class Tableware extends Things { ;
 
     public Tableware(String name) {

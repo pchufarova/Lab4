@@ -42,7 +42,6 @@ public class Home extends Place {
     }
 
     public class Door {
-
         private boolean isClosed = true;
         private static String doorName = "Дверь";
 
@@ -54,7 +53,7 @@ public class Home extends Place {
             return Events.DOOR_IS_KNOCKED;
         }
 
-        public void openBy(Creatures creature) throws DeterminationException { //exceptionы по факту одинаковые?...
+        public void openBy(Creatures creature) throws DeterminationException {
 
             if (creature.getCondition() != Reactions.DETERMINATION) throw new DeterminationException("Не хватает решимости открыть дверь");
 

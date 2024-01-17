@@ -2,9 +2,9 @@ package things;
 
 public class Letter {
 
-    private String toWho;
-    private String fromWho;
-    private String theme;
+    private final String toWho;
+    private final String fromWho;
+    private final String theme;
     public Letter(String toWho, String fromWho, String theme) {
 
         this.toWho = toWho;

@@ -1,6 +1,5 @@
 package things;
 
-import java.util.Objects;
 
 public class GrillThings extends Things {
 

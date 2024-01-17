@@ -1,13 +1,10 @@
 package creatures;
 
-import enums.Events;
 import enums.Genders;
 import enums.Reactions;
 import interfaces.Goable;
 import interfaces.Speakable;
-import surroundings.Home;
 import surroundings.Place;
-import things.Things;
 
 import java.util.Objects;
 

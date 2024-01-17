@@ -1,10 +1,8 @@
 package things;
 
 import creatures.Creatures;
-import exceptions.DeterminationException;
 import exceptions.NegativeCoefficientException;
 import interfaces.Flyable;
-
 import java.util.Objects;
 
 public abstract class Things implements Flyable {

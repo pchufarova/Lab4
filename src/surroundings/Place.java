@@ -1,7 +1,5 @@
 package surroundings;
 
-import creatures.Creatures;
-
 import java.util.Objects;
 
 public class Place {

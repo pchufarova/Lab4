@@ -1,6 +1,5 @@
 package enums;
 
-import creatures.Creatures;
 import surroundings.Place;
 
 public enum Events {
