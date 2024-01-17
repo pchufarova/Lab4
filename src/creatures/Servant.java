@@ -4,6 +4,8 @@ import enums.Events;
 import interfaces.Bowable;
 import interfaces.Entanglable;
 
+import java.util.Objects;
+
 public class Servant extends Creatures implements Bowable {
 
     protected String post;
@@ -22,6 +24,13 @@ public class Servant extends Creatures implements Bowable {
 
         Wig wig = new Wig();
         return wig.entangle();
+
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(name, gender, condition, currentPlace, post);
 
     }
 

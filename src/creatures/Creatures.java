@@ -7,6 +7,9 @@ import interfaces.Goable;
 import interfaces.Speakable;
 import surroundings.Home;
 import surroundings.Place;
+import things.Things;
+
+import java.util.Objects;
 
 public abstract class Creatures implements Speakable, Goable {
 
@@ -42,5 +45,29 @@ public abstract class Creatures implements Speakable, Goable {
 
     public String getName() { return name; }
     public Reactions getCondition() { return condition; }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(name, gender, condition, currentPlace);
+
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+
+        if (obj == this) return true;
+        if (obj == null || obj.getClass() != this.getClass()) return false;
+        Creatures creature = (Creatures) obj;
+        return Objects.equals(name, creature.name);
+
+    }
+
+    @Override
+    public String toString() {
+
+        return "Creature_ " + name;
+
+    }
 
 }

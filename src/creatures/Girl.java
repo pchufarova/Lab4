@@ -8,10 +8,12 @@ import interfaces.Laughable;
 import surroundings.Home;
 import surroundings.Place;
 
+import java.util.Objects;
+
 public class Girl extends Creatures implements Laughable, CanCatchEvent {
 
     private int voiceVolume = 5;
-    private Place startPlace;
+    private final Place startPlace;
 
     public Girl(String name, Place startPlace) {
 
@@ -89,8 +91,11 @@ public class Girl extends Creatures implements Laughable, CanCatchEvent {
         }
     }
 
-    public void saw(CheshireCat cat) {
+    @Override
+    public int hashCode() {
 
+        return Objects.hash(name, gender, condition, currentPlace, voiceVolume, startPlace);
 
     }
+
 }

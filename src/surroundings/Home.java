@@ -5,6 +5,8 @@ import enums.Events;
 import enums.Reactions;
 import exceptions.DeterminationException;
 
+import java.util.Objects;
+
 public class Home extends Place {
     private Kitchen kitchen;
     private Door door;
@@ -17,9 +19,17 @@ public class Home extends Place {
 
     }
 
-
     public Kitchen getKitchen() { return kitchen; }
     public Door getDoor() { return door; }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(name, kitchen, door);
+
+    }
+
+
 
     public static class Kitchen extends Place{
 
@@ -28,7 +38,6 @@ public class Home extends Place {
             super("Кухня");
 
         }
-
 
     }
 
