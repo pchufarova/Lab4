@@ -42,6 +42,7 @@ public abstract class Creatures implements Speakable, Goable {
 
     public String getName() { return name; }
     public Reactions getCondition() { return condition; }
+    public void setCondition(Reactions react) { condition = react; }
 
     @Override
     public int hashCode() {

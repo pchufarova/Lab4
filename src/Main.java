@@ -1,6 +1,7 @@
 import creatures.*;
 import enums.Events;
 import enums.Genders;
+import enums.Reactions;
 import exceptions.DeterminationException;
 import interfaces.Smileable;
 import surroundings.Home;
@@ -52,6 +53,8 @@ public class Main {
                 public void smile() {
 
                     System.out.println("Чеширский кот улыбнулся.");
+                    girl.setCondition(Reactions.CURIOUS);
+                    System.out.println("Состояние " + girl.getName() + ": " + girl.getCondition().getCondition());
                     girl.ask("Почему ваш кот так улыбается?", duchess);
                 }
             };
