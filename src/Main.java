@@ -54,7 +54,6 @@ public class Main {
 
                     System.out.println("Чеширский кот улыбнулся.");
                     girl.setCondition(Reactions.CURIOUS);
-                    System.out.println("Состояние " + girl.getName() + ": " + girl.getCondition().getCondition());
                     girl.ask("Почему ваш кот так улыбается?", duchess);
                 }
             };
